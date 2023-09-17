@@ -1,15 +1,25 @@
-//- ** This is a sample of a pug template and how it uses the data passed to it from index.js.
-
-//- doctype html
-//- html 
-//-     head 
-//-         title= `${title}`
-//-         meta(name="viewport" content="width=device-width, initial-scale=1")
-//-         link(rel="stylesheet", href="/css/style.css")
-//-     body    
-//-         h1 Contacts
-//-         .cards 
-//-             each contact in data
-//-                 .card 
-//-                     h2.card__name #{contact.properties.firstname}  #{contact.properties.lastname}
-//-                     p.card__email #{contact.properties.email}
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css") 
+  body
+    .container
+      h1 Contact Table
+      a.btn.btn-primary(href="/update")
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          tr
+            th Middle Name
+            th First Name
+            th Email
+        tbody
+          each contact in data
+            tr
+              td= contact.properties.middle_name || 'N/A'
+              td= contact.properties.firstname || 'N/A'
+              td= contact.properties.email || 'N/A'
+    
+    script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js") 
