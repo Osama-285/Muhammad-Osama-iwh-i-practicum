@@ -14,7 +14,7 @@ app.get("/", async (req, res) => {
   const contacts =
     "https://api.hubapi.com/crm/v3/objects/contacts?properties=email,middle_name,firstname";
   const headers = {
-    Authorization: `Bearer pat-na1-73aca9b3-98ba-4f9c-a9ff-899ceb30a905`,
+    Authorization: `Bearer ${process.env.secret_key}`,
     "Content-Type": "application/json",
   };
 
