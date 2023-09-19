@@ -1,4 +1,4 @@
-New Developer Test Account Link (Osama Integration) : https://app.hubspot.com/user-preferences/43890565/profile?eschref=%2Fdiscover%2F43890565%2Flibrary%2Fdashboards
+New Developer Test Account Link (Osama Integration) : https://app.hubspot.com/contacts/43890565/objects/0-1/views/all/list
 
 Three New Custom Properties Created:
 Author Name (String)
