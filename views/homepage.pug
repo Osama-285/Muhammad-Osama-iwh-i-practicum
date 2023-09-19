@@ -10,15 +10,15 @@ html
       table.table.table-striped.table-bordered.table-hover
         thead
           tr
-            th Middle Name
-            th First Name
-            th Email
+            th Name
+            th Book
+            th Edition
         tbody
           each contact in data
             tr
-              td= contact.properties.middle_name || 'N/A'
-              td= contact.properties.firstname || 'N/A'
-              td= contact.properties.email || 'N/A'
+              td= contact.properties.author_name || 'N/A'
+              td= contact.properties.book || 'N/A'
+              td= contact.properties.edition || 'N/A'
     
     script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js")
     script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js")

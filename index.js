@@ -9,12 +9,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("css"));
 app.use(bodyParser.urlencoded({ extended: false }));
-// * Please includethe private app access token in your repo BUT only an access token built in a TEST ACCOUNT. Don't do this practicum in your normal account.
-const PRIVATE_APP_ACCESS = "";
 
 app.get("/", async (req, res) => {
   const contacts =
-    "https://api.hubapi.com/crm/v3/objects/contacts?properties=email,middle_name,firstname";
+    "https://api.hubapi.com/crm/v3/objects/contacts?properties=email,author_name,book,edition";
   const headers = {
     Authorization: `Bearer ${process.env.secret_key}`,
     "Content-Type": "application/json",
@@ -36,15 +34,17 @@ app.get("/update-cobj", (req, res) => {
 });
 
 app.post("/update-cobj", async (req, res) => {
-  const formData = req.body; // Access form data here
+  const formData = req.body;
   console.log("Form Data", formData);
   // res.redirect("/");
   const update = {
     properties: {
       firstname: formData.firstName,
       lastname: formData.lastName,
-      middle_name: formData.book,
       email: formData.email,
+      author_name: formData.author,
+      book: formData.book,
+      edition: formData.edition,
     },
   };
   console.log("PROPERTIRS", update);
